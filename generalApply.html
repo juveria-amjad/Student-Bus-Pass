@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>General Bus Pass Application</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/0f0c6581c2.js" crossorigin="anonymous"></script>
+
+  <!-- Custom CSS and JS -->
+  <link rel="stylesheet" href="./form.css">
+  <script src="./generalScript.js"></script>
+
+</head>
+
+<body onload="generateID();">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+
+  <!-- script to display value in span in #submitModal -->
+  <script>
+    function launch() {
+      let uniqueValue = document.getElementById("uniqueID");
+      document.getElementById("displayID").innerHTML = uniqueValue.value;
+    }
+  </script>
+
+
+  <!-- Heading -->
+  <div class="mx-auto my-5" style="width: 600px;">
+    <h1>General Bus Pass Application</h1>
+  </div>
+
+  <!-- Form Start -->
+  <form action="" class="form1" id="applyForm">
+
+    <!--  1st Container -->
+    <div class="container mx-auto">
+      <div class="form-group">
+        <div class="form-row m-3 mb-5">
+          <div class="col-md-6">
+            <label for="uniqueID">ID</label>
+            <input type="text" class="a" id="uniqueID" disabled>
+          </div>
+        </div>
+        <div class="form-row m-3 mb-4">
+          <div class="col-md-6">
+            <label for="name">Name</label>
+            <input type="text" class="a" id="name" placeholder="Name" required>
+          </div>
+          <div class="col-md-6">
+            <label for="guardianname">Father's / Guardian's Name</label>
+            <input type="text" class="a" id="guardianname" placeholder="Father's / Guardian's Name">
+          </div>
+        </div>
+        <div class="form-row m-3 mb-4">
+          <div class="col-md-6">
+            <label for="gender">Gender</label>
+            <input type="checkbox" class="b" id="gender" value="Woman">Woman
+            <input type="checkbox" class="b" id="gender" value="Man">Man
+            <input type="checkbox" class="b" id="gender" value="Transgender">Transgender
+            <br />
+            <input type="checkbox" class="b" id="gender" value="Non-binary">Non-binary
+            <input type="checkbox" class="b" id="gender" value="Prefer not to respond">Prefer not to respond
+          </div>
+          <div class="col-md-6">
+            <label for="dob">Date of Birth</label>
+            <input type="date" class="a" name="Date of Birth" id="dob" required>
+          </div>
+        </div>
+        <div class="form-row m-3 mb-4">
+          <div class="col-md-6">
+            <label for="mobile">Mobile No.</label>
+            <input type="number" class="a" name="Mobile No." id="mobile" placeholder="Mobile No.">
+          </div>
+          <div class="col-md-6">
+            <label for="email">Email</label>
+            <input type="email" class="a" name="email" id="email" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-row m-3 mb-4">
+          <div class="col-md-6">
+            <label for="fileinput">Upload Aadhar</label>
+            <input type="file">
+          </div>
+          <div class="col-md-6">
+            <label for="fileinput">Upload Student ID Card</label>
+            <input type="file">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 2nd Container -->
+    <div class="container mx-auto">
+      <table align="center">
+        <tr>
+          <td>
+            <label for="pincode">Pincode</label>
+            <input type="number" class="a" name="pincode" id="pincode" placeholder="Pincode" required>
+          </td>
+          <td>
+            <label for="address">Address</label>
+            <textarea class="a" name="address" id="address" placeholder="Address" required> </textarea>
+          </td>
+        </tr>
+      </table>
+
+      <table align="center">
+        <tr>
+          <td>
+            <label for="paymentMode">Payment Mode</label>
+            <select name="paymentMode" id="paymentMode" class="a">
+              <option value="default">Select a payment mode</option>
+              <option value="At Counter">At Counter</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="deliveryMode">Pass Delivery Mode</label>
+            <select name="deliveryMode" id="deliveryMode" class="a">
+              <option value="default">Select a pass delivery mode</option>
+              <option value="At Counter">At Counter</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <!-- Button -->
+      <div class="row m-5">
+        <input type="submit" value="Apply" class="btn" onclick="store();launch();">
+      </div>
+    </div>
+    <!-- 2nd Container End -->
+  </form>
+  <!-- Form End -->
+
+  <!-- Modal on submitting the Application -->
+  <div class="modal fade" id="submitModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="submitModalLabel">Your Application successfully submitted!</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"
+              aria-hidden="true" style="border: none;"></i></button>
+        </div>
+        <div class="modal-body">
+          Your Application ID is <span id="displayID" style="font-weight: bold;"></span>. You can use it to modify your
+          application.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal End -->
+
+  <!-- Modal pop jQuery -->
+  <script>
+    $("#applyForm").submit(function (e) {
+      $('#submitModal').modal('show');
+      return false;
+    });
+  </script>
+
+
+</body>
+
+</html>
